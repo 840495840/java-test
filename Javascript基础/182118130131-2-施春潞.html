@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>要求用户在文本框中输入用户名，提交时，若文本框为空，则取消提交。</title>
+<!--    要求用户在文本框中输入用户名，提交时，若文本框为空，则取消提交。-->
+    <script>
+        var oText = document.getElementById("text1").value;
+
+function o() {
+    if (oText == '')
+    {
+        alert("为空");
+        return false;
+    }
+    else
+    {
+        alert("提交成功");
+        return true;
+    }
+}
+
+    </script>
+</head>
+<body>
+<form action="post">
+    请输入用户名：<input id = 'text1' type="text" >
+    <input type="button" value="提交" onclick="o()">
+</form>
+</body>
+</html>

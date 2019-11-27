@@ -1,0 +1,91 @@
+    <!DOCTYPE html>
+    <html lang="en" xmlns:display="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎来到客服中心</title>
+        <style>
+
+            .form-1 {
+                text-align: center;
+                background: url("./margin.jpg");
+            }
+            a{
+                color: antiquewhite;
+                text-decoration:none;
+            }
+
+            .inputOver{
+                border-width: 2px;
+                border-color: red;
+            }
+
+            .inputOut{
+                border-width: 2px;
+                border-color: chartreuse;
+            }
+
+            .inputDenlu{
+                background: url("./3.png");
+            }
+
+        </style>
+
+        <script>
+            function setText1() {
+               var input1 = document.getElementById('input1');
+               input1.className ='inputOver';
+            }
+
+            function clearText1() {
+                var input1 = document.getElementById('input1');
+                input1.className ='inputOut';
+
+            }
+
+            function setText2() {
+                var input1 = document.getElementById('input2');
+                input1.className ='inputOver';
+            }
+
+            function clearText2() {
+                var input1 = document.getElementById('input2');
+                input1.className ='inputOut';
+
+            }
+
+            function denlu1() {
+                var denlu = document.getElementById('denlu');
+               denlu.className = 'inputDenlu';
+
+            }
+            function denlu2() {
+                var denlu = document.getElementById('denlu');
+                denlu.className = '';
+
+            }
+
+
+
+
+        </script>
+    </head>
+    <body>
+
+    <div class="form-1">
+
+
+        <h3 >欢迎来到客服中心</h3>
+
+        <form >
+            <sapn style="display:inline-block;width:100px;text-align:right;">会员名：</sapn><input id="input1" type="text" align="center" onmouseover="setText1()" onmouseout="clearText1()"  >
+        </form>
+        <form>
+            <span style="display:inline-block;width:100px;text-align:right;">密码：</span><input id="input2" type="password" align="center" onmouseover="setText2()" onmouseout="clearText2()">
+        </form>
+
+
+            <span><input id="denlu" type="button" value="登陆" onmouseover="denlu1()" onmouseout="denlu2()" > <a href="">忘记密码</a></span>
+    </div>
+
+    </body>
+    </html>

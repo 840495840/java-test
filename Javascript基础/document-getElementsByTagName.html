@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getElements()
+        {
+            var x = document.getElementsByTagName('input');
+            alert('input标签的数量是'+x.length);
+
+            for (var i=0;i<x.length;i++)
+            {
+                alert('第'+(i+1)+'个input元素的值是'+x[i].value);
+            }
+        }
+    </script>
+</head>
+<body>
+        <input value="11">
+        <br>
+        <input value="22">
+        <br>
+        <input value="33">
+        <br>
+        <input  value="点击" onclick="getElements()">
+</body>
+</html>

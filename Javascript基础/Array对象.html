@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array对象</title>
+<!--1. 创建
+                1. var arr = new Array(元素列表);
+                2. var arr = new Array(默认长度);
+                3. var arr = [元素列表]；
+    2. 特点
+                1. 数组元素类型可变
+                2. 数组的长度也是可以变化的 并不是定义了就无法改变
+    3. 属性
+                1. length长度
+    4. 方法
+                1. join(参数) : 将数组中的元素拼接字符串
+                2. push() : 向数组的末尾添加一个或多个元素，并返回新的长度-->
+
+    <script>
+        var arr = new Array(3,4,5);
+        document.write(arr+'<br>');
+
+        var arr1 = new Array(3);
+        document.write(arr1+'<br>');
+
+        var arr2 = [4,5,5,true,'s好的jk'];
+        document.write(arr2+'<br>');
+
+        document.write(arr2.join('---')+'<br>');
+        arr2.push('push你好','840495840');        //push() 可以添加一个或者多个元素 在数组最后
+        document.write(arr2.join('****')+'<br>');
+        document.write(arr2.length);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

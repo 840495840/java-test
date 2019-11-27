@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三位一体网页</title>
+    
+    <style>
+        p{
+            color: cadetblue;
+            font-weight: bolder;
+            
+        }
+        .cls1
+        {
+            font-weight: lighter;
+            color: red;
+        }
+    </style>
+
+
+        <script>
+
+            function getCss() {
+            var p1 = document.getElementById('p1');
+            var yanshi = window.getComputedStyle(p1);
+            alert('颜色是'+yanshi.color);
+
+        }
+
+        function setCss() {
+            var p1 = document.getElementById('p1');
+            p1.className = 'cls1';
+
+        }
+
+        function clearCss() {
+            var p1 = document.getElementById('p1');
+            p1.className = '';
+        }
+
+/*
+                body的样式
+        function dianji() {
+            var paras = document.getElementsByTagName('p');
+            /!*        paras.onclick=function () {
+                        alert('你点击了');
+                    }*!/
+            for (var i = 0;i<paras.length;i++)
+            {
+                paras[i].onclick = function () {
+                    alert('你点击了标签');
+                }
+            }
+
+
+
+        }
+*/
+
+    </script>
+
+
+</head>
+<body>
+    <p id="p1" onclick="getCss()" onmouseover="setCss()" onmouseout="clearCss()">这是一段段落标签</p>
+    <p>这是一段段落标签</p>
+    <p>这是一段段落标签</p>
+    <p>这是一段段落标签</p>
+
+
+</body>
+</html>

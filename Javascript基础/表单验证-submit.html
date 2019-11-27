@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱表单验证</title>
+    <script>
+        //email 正则表达式
+        function validate(form,event)
+        {
+            var emailReg = /^\w+@(\w+\.)+\w+$/;
+            var email = form.email.value;
+            if (emailReg.test(email) == false)
+            {
+                alert("email不正确");
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="post" name="form1" action="" onsubmit="return validate(this,event)">
+    email: <input type="text" name="email">
+    <br>
+    邮编: <input type="text" name="zipcode">
+    <br>
+    <input type="submit" valueh="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="js/jquery-3.4.1.min.js">
+
+
+    </script>
+</head>
+<body>
+<div>
+    div1.....
+</div>
+<div>
+    div2.....
+</div>
+<input type="button" value="点我"  id="b1">
+<script>
+
+    //jq
+   $('#b1').click(fun1);
+        function fun1() {
+            var a = alert('abc');
+            return a;
+        }
+  console.log(fun1)
+    console.log(fun1())
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover实现图片的隐藏和显示</title>
+    <script src="./Jqery/js/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(
+        function() {
+            $('p').hover(
+                function () {
+                    $('#img1').hide()
+                },
+                function () {
+                    $("#img1").show();
+                }
+            )
+        }
+    )
+
+    </script>
+</head>
+<body>
+
+    <p id="p1">鼠标滑动到这显示图片，滑出隐藏图片</p>
+    <img src="./margin2.jpg" alt="" id="img1">
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态定位</title>
+    <script>
+        function move() {
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+            p1.style.left = x+'px';
+            p1.style.top = y + 'px';
+        }
+        
+        var p1;
+        function initPosition() {
+            p1 = document.getElementById('p1');
+            p1.style.position = "absolute";
+            p1.style.left = '120px';
+            p1.style.top = '100px';
+        }
+    </script>
+</head>
+<body onload="initPosition()" >
+
+
+    <p id="p1">移动的文本</p>
+    <span>X:<input type="text" id="x"></span>
+    <br>
+    <span>Y:<input type="text" id="y"></span>
+    <br>
+    <input type="button" onclick="move()" value="移动">
+
+
+
+</body>
+</html>

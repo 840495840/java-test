@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时显示时间</title>
+    <script>
+        //显示年月日
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth();
+        var day = today.getDate();
+        document.write(year+"年"+month+"月"+day+"日");
+
+        //显示实时时间
+
+
+        var clock = setInterval(function f () {
+          myTime();
+        },1000);
+        function myTime()
+        {
+            var d = new Date();
+            var t = d.toLocaleString();
+            document.getElementById("clock").innerHTML=t;
+
+        }
+       document.write('<p id="clock">'+clock+'</p>');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+
+</head>
+<body>
+    <div id = "div1">div1</div>
+    <div id = "div2">div2</div>
+    <div id = "div3">div3</div>
+    <div id = "div4">div4</div>
+
+    <div class = "cls1">div5</div>
+    <div class = "cls2">div6</div>
+    <input type="text" name="userName">
+    <font color="red" >
+    hello
+    </font>
+
+
+    <script>
+
+//根据元素名称获取元素对对象们，返回一个数组,有多少个同名的div标签元素
+        var divs = document.getElementsByTagName("div");
+        alert(divs.length);
+//根据class的属性值返回对象们，返回一个数组。
+        var classes = document.getElementsByClassName("cls1");
+        alert(classes.length);
+//根据name属性返回对象们，返回一个数组。
+        var els_names = document.getElementsByName("userName");
+        alert(els_names.length);
+    </script>
+
+
+
+
+</body>
+</html>

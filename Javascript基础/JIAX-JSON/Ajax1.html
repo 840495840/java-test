@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Jqery/js/jquery-3.4.1.min.jss"></script>
+    <script>
+        $.get('date.txt').ajaxSuccess(function (content) {
+            var ss = content.split(',');
+            for (var i = 0; i<ss.length;i++)
+            {
+               $('#select1').append('<option>'+ss[i]+'</option>>')
+            }
+        })
+    </script>
+</head>
+<body>
+<select name="" id="select1"></select>
+</body>
+</html>

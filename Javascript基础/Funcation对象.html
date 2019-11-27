@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcation对象</title>
+</head>
+<script>
+    /*
+    *1. 创建
+    *   1. var fun = new Funcation(形式参数列表，方法体);
+    *    2. function 方法名（形式参数列表）{方法体}
+    *       3. var fun2 =  function 方法名（形式参数列表）{方法体}
+    ***************************************************************************/
+
+
+
+   /* var fun1 = new Function ("a","b","alert(a);");
+        fun1('你好',4);
+    */
+
+
+/*
+    function fun2(a,b) {
+        alert(a+b);
+    }
+    fun2(2,3);
+ */
+
+   /* var fun2 =  function (a,b)
+    {
+        alert(a-b);
+    }
+    fun2(5,2);
+    */
+
+   function add() {
+       var sum = 0;
+       for (var i = 0; i<arguments.length;i++)
+           sum += arguments[i];
+       return sum;
+   }
+   var sum = add(3,4,5);
+   alert(sum);
+
+</script>
+<body>
+
+</body>
+</html>

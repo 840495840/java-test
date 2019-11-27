@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMLDEMO</title>
+</head>
+<body>
+    <div id="div1">
+        div
+    </div>
+
+    <div id="div2">
+        div2
+    </div>
+
+    <div id="div3">
+        div3
+    </div>
+
+
+
+    <script>
+        var div1 = document.getElementById('div1');
+        var innerHtml = div1.innerHTML;
+        // 弹出div1中的内容
+        alert(innerHtml);
+
+        // div标签中替换一个文本输入框
+        var div2 = document.getElementById('div2');
+        var innerHtml2 = div2.innerHTML;
+        div2.innerHTML = '<input style="text">';
+
+        //div 标签中追加一个文本输入框
+        var div3 = document.getElementById('div3');
+        var innerHtml3 = div3.innerHTML;
+        div3.innerHTML = div3.innerHTML+"<input style='text'>";
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历表</title>
+    <script>
+
+        //获取 年  月  日
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth()+1;
+        var infoEvery = new Date(year,(month-1),1); //当月第一天日期信息
+        var firstday = infoEvery.getDay();  //当月第一天是星期几
+        var day = today.getDate();
+        var weekEveryDay = today.getDay();           //一个星期中的第几天
+        var dateTime = year+"年"+month+"月"+day+"日";
+
+        //4行以下——判断总共需要多少行
+        var allDays = [31,28+is_leap(month),31,30,31,30,31,31,30,31,30,31];   //各月份的总天数
+        var allRow = Math.ceil((allDays[month]+weekEveryDay)/7);
+
+        //  判断是否是闰年
+        function is_leap(year)
+        {
+            return (year%100==0?res = (year%400==0?1:0):res=(year%4==0?1:0));
+        }
+
+        //数组 ---    星期
+        var weekday = ['日','一','二','三','四','五','六'];
+
+        //   打印第一行  年月日
+        document.write('<h1 align="center">'+dateTime+'</h1>');
+
+        //  打印第二行  星期几
+        document.write('<h3 align="center">'+'星期'+weekday[today.getDay()]+'<p id="clock" style = "background-color: blue">'+'</p>'+'</h3>');
+
+
+        // 第二行 实时时钟
+        //document.write('<table style="border: blue">'+'<tr style="background-color: blue" >' );
+        var clock =
+            setInterval(
+                                function f ()
+                            {
+                                myTime()
+                            },1000
+                        );
+        function myTime()
+        {
+            var d = new Date();
+            var t = d.toLocaleString();
+            //document.write(t);
+            document.getElementById("clock").innerHTML = t;
+        }
+        //document.write('</tr>'+'</talbe>')
+
+
+        //打印 第三行
+        document.write('<table width="300px" align="center" cellpadding="2">'+"<tr>");
+        for (var i=0;i<7;i++)
+        {
+            document.write("<td align='center' style='background-color: grey'>"+weekday[i]+"</td>");
+        }
+        document.write("</tr>");
+
+        //打印 4往下
+        for (var i=0;i<allRow;i++)
+        {
+            document.write('<tr>' );
+            for (var k=0;k<7;k++)
+            {
+                var idx = i*7+k;
+                var date_str = idx-firstday+1;
+                //过滤无效日期
+                (date_str<=0 || date_str>allDays[(month-1)])?date_str = "&nbsp":date_str=idx-firstday+1;
+                // document.write('<td align="center">'+date_str+'</td>');
+                //打印日期：今天的底色为红色
+                date_str == day ? document.write("<td align='center' style='background-color: red'>"+date_str+"</td>"):document.write("<td align='center'>"+date_str+"</td>");
+            }
+
+            document.write('</tr>');
+        }
+        document.write('</table>');
+
+
+        // document.write('<table>'+'<tr>');
+        // var clock = setInterval(function f () {myTime()},1000);
+        // function myTime()
+        // {
+        //     var d = new Date();
+        //     var t = d.toLocaleString();
+        //     document.getElementById("clock").innerHTML = t;
+        // }
+        // document.write('</tr>'+'</talbe>')
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+<!--<p id="clock"></p>-->
+
+</body>
+</html>

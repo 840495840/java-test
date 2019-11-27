@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册表单</title>
+    <style>
+        span{
+            color: red;
+        }
+        input::-webkit-input-placeholder
+        {
+            font-size: 2px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById('form').onsubmit = function  () {
+
+                return checkUsrName() && checkuserpassword() && checkuserpasswordagain()
+
+            }
+        }
+        function tijiao1 ()
+        {
+
+
+            if (checkUsrName() && checkuserpassword() && checkuserpasswordagain())
+            {
+                open("http://www.baidu.com");
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+        
+        function checkUsrName() {
+            //获取用户名
+            var username = document.getElementById('user-name').value;
+            // 定义正则表达式
+            var reg_username = /^\w{4,16}$/;
+            // 验证是否正确
+            var isNo = reg_username.test(username);
+            // 提示
+            var s_username = document.getElementById('s_username');
+            if (isNo)
+            {
+                s_username.innerHTML = "输入正确!"
+            }
+            else
+            {
+                s_username.innerHTML = '输入格式有误!';
+            }
+            return isNo;
+
+
+    }
+
+    function checkuserpassword() {
+            var userpassword = document.getElementById('user-password').value;
+            var reg_userpassword = /^\w{6,16}$/;
+            var isNo = reg_userpassword.test(userpassword);
+            if (isNo)
+            {
+                s_userpassword.innerHTML = "输入正确！";
+            }
+            else
+            {
+                s_userpassword.innerHTML = "输入格式错误！";
+            }
+            return isNo;
+    }
+        function checkuserpasswordagain() {
+            var userpasswordagain = document.getElementById('user-password-again').value;
+            var userpassword = document.getElementById('user-password').value;
+            var isNo = userpassword === userpasswordagain ;
+            if (isNo)
+            {
+                s_password_again.innerHTML = "输入正确！";
+            }
+            else
+            {
+
+                s_password_again.innerHTML = "输入错误！"
+            }
+
+            return  isNo;
+        }
+
+
+
+    </script>
+</head>
+<body>
+<form action="" method="post" id="form">
+    <table align="center">
+        <tr>
+            <td> <span>*</span>昵称： </td>
+            <td> <input id = 'user-name' type="text" placeholder="英文字母，数字或者下划线，长度为4-16个字符"> <span id="s_username"></span></td>
+        </tr>
+        
+        <tr>
+            <td> <span>*</span>密码： </td>
+            <td> <input id="user-password" type="password" placeholder="6-16个字符，由数字或字母组成"><span id="s_userpassword"></span> </td>
+        </tr>
+        
+        <tr>
+            <td><span>*</span>重新输入密码：</td>
+            <td><input id="user-password-again" type="password" placeholder="再次输入"><span id = 's_password_again'></span></td>
+        </tr>
+        <tr>
+            <td align="right"><input type="button" value="提交注册" id="tijiao" onclick="tijiao1()"> </td>
+
+        </tr>
+
+    </table>
+
+
+
+
+
+</form>
+
+</body>
+</html>

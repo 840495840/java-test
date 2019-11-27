@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标点击事件</title>
+    <script>
+        function moveover(p)
+        {
+            p.style.color = "red";
+        }
+
+        function moveout(p)
+        {
+            p.style.color = "black";
+        }
+
+        function getFocus(edit) {
+            edit.value = "我获得了焦点";
+        }
+
+        function getBlur(edit) {
+            edit.value = "我失去了焦点";
+        }
+
+        function loadPage() {
+            alert("加载完成");
+
+        }
+    </script>
+</head>
+<body onload="loadPage();">
+    <p  onmouseover="moveover(this)" onmouseout = "moveout(this)">
+        鼠标移过来，移走会有惊喜！
+    </p>
+
+    <p align="center">
+        文本框获得和失去焦点
+    </p>
+    <input type="text" onfocus="getFocus(this)" onblur="getBlur(this)">
+</body>
+</html>

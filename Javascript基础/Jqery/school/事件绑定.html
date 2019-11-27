@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="../js/jquery-3.4.1.min.js">
+
+    </script>
+</head>
+<body>
+<p>事件绑定</p>
+<div class="clsContent">div1....</div>
+<div class="clsContent">div2...</div>
+<script>
+
+
+  /*  $('p').load().bind('click',function () {
+        alert('22222222222')
+    });*/
+
+
+   /* $(document).ready(function () {
+        $('p').bind('click',function () {
+            alert('3333333333')
+        })
+    })*/
+
+   $('p').bind('mouseout mouseover',function () {
+      // alert('555555555555')
+       $('.clsContent').hide();
+   } )
+
+</script>
+</body>
+</html>
